@@ -1,0 +1,257 @@
+<mxfile host="app.diagrams.net" agent="diagrams.net">
+  <diagram id="pipeline-architecture" name="System Architecture">
+    <mxGraphModel dx="1407" dy="904" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;AI-Powered Transaction Processing Pipeline&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size: 13px; color: #888888;&quot;&gt;High-Level System Architecture &amp; Data Flow&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="480" x="480" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="user" parent="1" style="shape=mxgraph.basic.smiley;fillColor=#E6F3FF;strokeColor=#4A90D9;fontFamily=Inter;fontSize=12;whiteSpace=wrap;html=1;shadow=1;rounded=1;" value="&lt;b&gt;User / Client&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 10px; color: #888;&quot;&gt;Browser / cURL / API Client&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="100" x="80" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="dashboard-group" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#6C63FF;strokeWidth=2;arcSize=8;shadow=1;dashed=1;dashPattern=5 5;" value="" vertex="1">
+          <mxGeometry height="150" width="140" x="60" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="dashboard-icon" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=28;" value="🖥️" vertex="1">
+          <mxGeometry height="40" width="60" x="100" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="dashboard-title" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#E0E0FF;fontFamily=Inter;fontSize=11;" value="&lt;b&gt;Monitoring Dashboard&lt;/b&gt;" vertex="1">
+          <mxGeometry height="26" width="130" x="65" y="162" as="geometry" />
+        </mxCell>
+        <mxCell id="dashboard-features" parent="1" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#A0A0CC;fontFamily=Inter;fontSize=9;" value="• Live Stats Cards&lt;br&gt;• Drag &amp; Drop Upload&lt;br&gt;• Batch Progress&lt;br&gt;• Anomaly Alerts&lt;br&gt;• Transaction Table" vertex="1">
+          <mxGeometry height="75" width="110" x="72" y="188" as="geometry" />
+        </mxCell>
+        <mxCell id="api-group" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0D3B66;strokeColor=#00B4D8;strokeWidth=2;arcSize=8;shadow=1;" value="" vertex="1">
+          <mxGeometry height="280" width="200" x="310" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="api-header" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;" value="&lt;font color=&quot;#00B4D8&quot; style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;⚡ FastAPI Server&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#7EC8E3&quot; style=&quot;font-size: 10px;&quot;&gt;Uvicorn · Port 8000&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="140" x="340" y="188" as="geometry" />
+        </mxCell>
+        <mxCell id="api-endpoint1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0A5C7A;strokeColor=#00B4D8;fontColor=#FFFFFF;fontFamily=Courier New;fontSize=10;shadow=0;" value="POST /jobs/upload" vertex="1">
+          <mxGeometry height="28" width="170" x="325" y="238" as="geometry" />
+        </mxCell>
+        <mxCell id="api-endpoint2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0A5C7A;strokeColor=#00B4D8;fontColor=#FFFFFF;fontFamily=Courier New;fontSize=10;shadow=0;" value="GET /jobs/{id}/status" vertex="1">
+          <mxGeometry height="28" width="170" x="325" y="274" as="geometry" />
+        </mxCell>
+        <mxCell id="api-endpoint3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0A5C7A;strokeColor=#00B4D8;fontColor=#FFFFFF;fontFamily=Courier New;fontSize=10;shadow=0;" value="GET /jobs/{id}/results" vertex="1">
+          <mxGeometry height="28" width="170" x="325" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="api-endpoint4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0A5C7A;strokeColor=#00B4D8;fontColor=#FFFFFF;fontFamily=Courier New;fontSize=10;shadow=0;" value="GET /jobs" vertex="1">
+          <mxGeometry height="28" width="170" x="325" y="346" as="geometry" />
+        </mxCell>
+        <mxCell id="api-features" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;fontSize=9;" value="&lt;font color=&quot;#7EC8E3&quot;&gt;CORS · Static Files · Swagger&lt;br&gt;Lifespan Hooks · Pydantic Schemas&lt;/font&gt;" vertex="1">
+          <mxGeometry height="36" width="170" x="325" y="382" as="geometry" />
+        </mxCell>
+        <mxCell id="api-docs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#145374;strokeColor=#00B4D8;fontColor=#90E0EF;fontFamily=Inter;fontSize=10;shadow=0;dashed=1;" value="📄 /docs (Swagger UI)" vertex="1">
+          <mxGeometry height="26" width="170" x="325" y="422" as="geometry" />
+        </mxCell>
+        <mxCell id="redis" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4A0E0E;strokeColor=#FF6B6B;strokeWidth=2;arcSize=12;shadow=1;" value="" vertex="1">
+          <mxGeometry height="90" width="160" x="610" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="redis-icon" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;" value="&lt;font color=&quot;#FF6B6B&quot; style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;🔴 Redis&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#FF9999&quot; style=&quot;font-size: 10px;&quot;&gt;Message Broker&lt;br&gt;Port 6379&lt;/font&gt;" vertex="1">
+          <mxGeometry height="55" width="110" x="635" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="redis-detail" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;fontSize=9;" value="&lt;font color=&quot;#FF9999&quot;&gt;Task Queue · Result Backend&lt;/font&gt;" vertex="1">
+          <mxGeometry height="20" width="140" x="625" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="celery-group" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1B4332;strokeColor=#52B788;strokeWidth=2;arcSize=8;shadow=1;" value="" vertex="1">
+          <mxGeometry height="280" width="200" x="870" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="celery-header" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;" value="&lt;font color=&quot;#52B788&quot; style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;⚙️ Celery Worker&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#95D5B2&quot; style=&quot;font-size: 10px;&quot;&gt;Background Task Processor&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="170" x="885" y="188" as="geometry" />
+        </mxCell>
+        <mxCell id="stage1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2D6A4F;strokeColor=#52B788;fontColor=#D8F3DC;fontFamily=Inter;fontSize=10;shadow=0;align=left;spacingLeft=8;" value="&lt;b&gt;Stage 1&lt;/b&gt; · Data Cleaning&lt;br&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;Parse CSV · Normalize Dates&lt;br&gt;Strip Currency · Deduplicate&lt;/font&gt;" vertex="1">
+          <mxGeometry height="48" width="176" x="882" y="236" as="geometry" />
+        </mxCell>
+        <mxCell id="stage2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2D6A4F;strokeColor=#52B788;fontColor=#D8F3DC;fontFamily=Inter;fontSize=10;shadow=0;align=left;spacingLeft=8;" value="&lt;b&gt;Stage 2&lt;/b&gt; · Anomaly Detection&lt;br&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;Median Calc · &amp;gt;3× Flag&lt;br&gt;USD + Domestic Brand Rule&lt;/font&gt;" vertex="1">
+          <mxGeometry height="48" width="176" x="882" y="292" as="geometry" />
+        </mxCell>
+        <mxCell id="stage3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2D6A4F;strokeColor=#52B788;fontColor=#D8F3DC;fontFamily=Inter;fontSize=10;shadow=0;align=left;spacingLeft=8;" value="&lt;b&gt;Stage 3&lt;/b&gt; · AI Classification&lt;br&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;Batched Gemini Prompts (50/batch)&lt;br&gt;Category Mapping&lt;/font&gt;" vertex="1">
+          <mxGeometry height="48" width="176" x="882" y="348" as="geometry" />
+        </mxCell>
+        <mxCell id="stage4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2D6A4F;strokeColor=#52B788;fontColor=#D8F3DC;fontFamily=Inter;fontSize=10;shadow=0;align=left;spacingLeft=8;" value="&lt;b&gt;Stage 4&lt;/b&gt; · AI Summary&lt;br&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;Narrative Generation&lt;br&gt;Risk Level Assessment&lt;/font&gt;" vertex="1">
+          <mxGeometry height="48" width="176" x="882" y="404" as="geometry" />
+        </mxCell>
+        <mxCell id="stage-arrow1" edge="1" parent="1" source="stage1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#52B788;strokeWidth=1;dashed=1;" target="stage2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="stage-arrow2" edge="1" parent="1" source="stage2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#52B788;strokeWidth=1;dashed=1;" target="stage3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="stage-arrow3" edge="1" parent="1" source="stage3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#52B788;strokeWidth=1;dashed=1;" target="stage4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="db" parent="1" style="shape=cylinder3;size=8;whiteSpace=wrap;html=1;fillColor=#3D1C6E;strokeColor=#B185DB;strokeWidth=2;shadow=1;rounded=1;" value="" vertex="1">
+          <mxGeometry height="110" width="160" x="570" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="db-label" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;" value="&lt;font color=&quot;#B185DB&quot; style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;🗄️ Database&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#D4AAFF&quot; style=&quot;font-size: 10px;&quot;&gt;PostgreSQL (prod)&lt;br&gt;SQLite (dev)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="55" width="120" x="590" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="db-tables" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;fontSize=9;" value="&lt;font color=&quot;#D4AAFF&quot;&gt;Jobs · Transactions · JobSummaries&lt;/font&gt;" vertex="1">
+          <mxGeometry height="20" width="170" x="568" y="608" as="geometry" />
+        </mxCell>
+        <mxCell id="gemini-group" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#5C3D0E;strokeColor=#FFBA08;strokeWidth=2;arcSize=12;shadow=1;" value="" vertex="1">
+          <mxGeometry height="160" width="200" x="1170" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="gemini-header" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;" value="&lt;font color=&quot;#FFBA08&quot; style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;🤖 Google Gemini AI&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#FFD166&quot; style=&quot;font-size: 10px;&quot;&gt;Gemini 1.5 Flash (LLM)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="170" x="1185" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="gemini-feat1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7A5311;strokeColor=#FFBA08;fontColor=#FFE08A;fontFamily=Inter;fontSize=10;shadow=0;" value="📦 Batch Categorization" vertex="1">
+          <mxGeometry height="26" width="170" x="1185" y="338" as="geometry" />
+        </mxCell>
+        <mxCell id="gemini-feat2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7A5311;strokeColor=#FFBA08;fontColor=#FFE08A;fontFamily=Inter;fontSize=10;shadow=0;" value="📝 Narrative Summary" vertex="1">
+          <mxGeometry height="26" width="170" x="1185" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="gemini-feat3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7A5311;strokeColor=#FFBA08;fontColor=#FFE08A;fontFamily=Inter;fontSize=10;shadow=0;" value="⚡ 3× Retry + Exp. Backoff" vertex="1">
+          <mxGeometry height="26" width="170" x="1185" y="402" as="geometry" />
+        </mxCell>
+        <mxCell id="storage" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2B2B40;strokeColor=#8888AA;strokeWidth=2;arcSize=12;shadow=1;" value="" vertex="1">
+          <mxGeometry height="70" width="160" x="310" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="storage-label" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;" value="&lt;font color=&quot;#AAAACC&quot; style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;📁 uploads/&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#8888AA&quot; style=&quot;font-size: 10px;&quot;&gt;CSV File Storage&lt;br&gt;(Local Filesystem)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="55" width="130" x="325" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="config-group" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E1E2E;strokeColor=#555577;strokeWidth=1;arcSize=12;shadow=0;dashed=1;dashPattern=8 4;" value="" vertex="1">
+          <mxGeometry height="110" width="200" x="1170" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="config-header" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;" value="&lt;font color=&quot;#8888AA&quot; style=&quot;font-size: 11px;&quot;&gt;&lt;b&gt;🔧 Configuration&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="26" width="120" x="1210" y="536" as="geometry" />
+        </mxCell>
+        <mxCell id="config-items" parent="1" style="text;html=1;align=left;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;fontSize=10;" value="&lt;font color=&quot;#7777AA&quot;&gt;• Pydantic Settings (.env)&lt;br&gt;• Structlog (JSON logging)&lt;br&gt;• SQLAlchemy ORM&lt;br&gt;• Docker Compose&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="150" x="1185" y="562" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-user-dash" edge="1" parent="1" source="user" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#6C63FF;strokeWidth=2;" target="dashboard-group" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-user-dash-label" connectable="0" parent="arrow-user-dash" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fillColor=none;fontFamily=Inter;" value="&lt;font color=&quot;#6C63FF&quot; style=&quot;font-size: 9px;&quot;&gt;HTTP&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.2" as="geometry">
+            <mxPoint x="12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-user-api" edge="1" parent="1" source="user" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#00B4D8;strokeWidth=2;" target="api-group" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-user-api-label1" connectable="0" parent="arrow-user-api" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fillColor=none;fontFamily=Inter;" value="&lt;font color=&quot;#00B4D8&quot; style=&quot;font-size: 9px;&quot;&gt;① POST /jobs/upload&lt;br&gt;(CSV file)&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1" y="-1" as="geometry">
+            <mxPoint y="-18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-api-redis" edge="1" parent="1" source="api-group" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;exitX=1;exitY=0.35;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF6B6B;strokeWidth=2;" target="redis" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-api-redis-label" connectable="0" parent="arrow-api-redis" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fillColor=none;fontFamily=Inter;" value="&lt;font color=&quot;#FF6B6B&quot; style=&quot;font-size: 9px;&quot;&gt;② Enqueue&lt;br&gt;process_job task&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1" as="geometry">
+            <mxPoint y="-16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-api-user" edge="1" parent="1" source="api-group" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;exitX=0;exitY=0.7;exitDx=0;exitDy=0;entryX=1;entryY=0.7;entryDx=0;entryDy=0;strokeColor=#00B4D8;strokeWidth=2;dashed=1;" target="user" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="376" />
+              <mxPoint x="260" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-api-user-label" connectable="0" parent="arrow-api-user" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fillColor=none;fontFamily=Inter;" value="&lt;font color=&quot;#00B4D8&quot; style=&quot;font-size: 9px;&quot;&gt;⑥ Return job_id&lt;br&gt;+ status + results&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.1" as="geometry">
+            <mxPoint y="16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-redis-celery" edge="1" parent="1" source="redis" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.35;entryDx=0;entryDy=0;strokeColor=#52B788;strokeWidth=2;" target="celery-group" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-redis-celery-label" connectable="0" parent="arrow-redis-celery" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fillColor=none;fontFamily=Inter;" value="&lt;font color=&quot;#52B788&quot; style=&quot;font-size: 9px;&quot;&gt;③ Dequeue &amp;amp;&lt;br&gt;Process&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1" as="geometry">
+            <mxPoint y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-celery-gemini" edge="1" parent="1" source="celery-group" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;strokeColor=#FFBA08;strokeWidth=2;" target="gemini-group" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-celery-gemini-label" connectable="0" parent="arrow-celery-gemini" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fillColor=none;fontFamily=Inter;" value="&lt;font color=&quot;#FFBA08&quot; style=&quot;font-size: 9px;&quot;&gt;④ Categorize &amp;amp;&lt;br&gt;Summarize (JSON)&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1" as="geometry">
+            <mxPoint y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-gemini-celery" edge="1" parent="1" source="gemini-group" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;exitX=0;exitY=0.7;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;strokeColor=#FFBA08;strokeWidth=2;dashed=1;" target="celery-group" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow-gemini-celery-label" connectable="0" parent="arrow-gemini-celery" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fillColor=none;fontFamily=Inter;" value="&lt;font color=&quot;#FFD166&quot; style=&quot;font-size: 9px;&quot;&gt;Categories +&lt;br&gt;Narrative + Risk&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.1" as="geometry">
+            <mxPoint y="14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-celery-db" edge="1" parent="1" source="celery-group" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.35;entryDx=0;entryDy=0;strokeColor=#B185DB;strokeWidth=2;" target="db" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="970" y="570" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-celery-db-label" connectable="0" parent="arrow-celery-db" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fillColor=none;fontFamily=Inter;" value="&lt;font color=&quot;#B185DB&quot; style=&quot;font-size: 9px;&quot;&gt;⑤ Write Transactions,&lt;br&gt;Anomalies, Summary&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.2" as="geometry">
+            <mxPoint y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-api-db" edge="1" parent="1" source="api-group" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.35;entryDx=0;entryDy=0;strokeColor=#B185DB;strokeWidth=2;dashed=1;" target="db" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="510" />
+              <mxPoint x="540" y="510" />
+              <mxPoint x="540" y="570" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-api-db-label" connectable="0" parent="arrow-api-db" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fillColor=none;fontFamily=Inter;" value="&lt;font color=&quot;#D4AAFF&quot; style=&quot;font-size: 9px;&quot;&gt;Query Jobs &amp;amp;&lt;br&gt;Transactions&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.3" as="geometry">
+            <mxPoint y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-api-storage" edge="1" parent="1" source="api-group" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#8888AA;strokeWidth=1;dashed=1;" target="storage" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="490" />
+              <mxPoint x="390" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow-api-storage-label" connectable="0" parent="arrow-api-storage" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fillColor=none;fontFamily=Inter;" value="&lt;font color=&quot;#8888AA&quot; style=&quot;font-size: 9px;&quot;&gt;Save CSV&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.3" as="geometry">
+            <mxPoint x="-20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E1E2E;strokeColor=#444466;strokeWidth=1;arcSize=12;shadow=0;" value="" vertex="1">
+          <mxGeometry height="160" width="180" x="60" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;" value="&lt;font color=&quot;#CCCCDD&quot; style=&quot;font-size: 11px;&quot;&gt;&lt;b&gt;Legend — Data Flow&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="26" width="140" x="80" y="496" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-1" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;fontSize=10;" value="&lt;font color=&quot;#00B4D8&quot;&gt;① Upload CSV&lt;/font&gt;" vertex="1">
+          <mxGeometry height="20" width="90" x="78" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-2" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;fontSize=10;" value="&lt;font color=&quot;#FF6B6B&quot;&gt;② Enqueue Task&lt;/font&gt;" vertex="1">
+          <mxGeometry height="20" width="100" x="78" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-3" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;fontSize=10;" value="&lt;font color=&quot;#52B788&quot;&gt;③ Process (4 stages)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="20" width="130" x="78" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-4" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;fontSize=10;" value="&lt;font color=&quot;#FFBA08&quot;&gt;④ AI Enrichment&lt;/font&gt;" vertex="1">
+          <mxGeometry height="20" width="110" x="78" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-5" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;fontSize=10;" value="&lt;font color=&quot;#B185DB&quot;&gt;⑤ Persist Results&lt;/font&gt;" vertex="1">
+          <mxGeometry height="20" width="110" x="78" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-6" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;fontSize=10;" value="&lt;font color=&quot;#00B4D8&quot;&gt;⑥ Return Results&lt;/font&gt;" vertex="1">
+          <mxGeometry height="20" width="110" x="78" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="badge-bar" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E1E2E;strokeColor=#333355;strokeWidth=1;arcSize=20;shadow=0;" value="" vertex="1">
+          <mxGeometry height="36" width="750" x="310" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="badges" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Inter;" value="&lt;font color=&quot;#888899&quot; style=&quot;font-size: 10px;&quot;&gt;Python 3.11 &amp;nbsp;·&amp;nbsp; FastAPI 0.115 &amp;nbsp;·&amp;nbsp; Celery 5.4 &amp;nbsp;·&amp;nbsp; Redis 5.2 &amp;nbsp;·&amp;nbsp; PostgreSQL 15 &amp;nbsp;·&amp;nbsp; SQLAlchemy 2.0 &amp;nbsp;·&amp;nbsp; Gemini 1.5 Flash &amp;nbsp;·&amp;nbsp; Pandas 2.2 &amp;nbsp;·&amp;nbsp; Docker&lt;/font&gt;" vertex="1">
+          <mxGeometry height="26" width="720" x="325" y="686" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
