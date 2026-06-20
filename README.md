@@ -169,7 +169,7 @@ AI-Powered Transaction Processing Pipeline/
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/AI-Powered-Transaction-Processing-Pipeline.git
+   git clone https://github.com/Swastikad4/AI-Powered-Transaction-Processing-Pipeline.git
    cd AI-Powered-Transaction-Processing-Pipeline
    ```
 
@@ -201,7 +201,7 @@ AI-Powered Transaction Processing Pipeline/
 
 1. **Clone and navigate:**
    ```bash
-   git clone https://github.com/your-username/AI-Powered-Transaction-Processing-Pipeline.git
+   git clone https://github.com/Swastikad4/AI-Powered-Transaction-Processing-Pipeline.git
    cd AI-Powered-Transaction-Processing-Pipeline
    ```
 
@@ -366,7 +366,9 @@ If this system needed to handle 100× the current load, the bottlenecks and solu
 
 ## 📬 Submission
 
-**Repository**: [AI-Powered Transaction Processing Pipeline](https://github.com/your-username/AI-Powered-Transaction-Processing-Pipeline)
+Name : Swastika Dey
+
+**Repository**: [AI-Powered Transaction Processing Pipeline] https://github.com/Swastikad4/AI-Powered-Transaction-Processing-Pipeline.git
 
 ---
 
