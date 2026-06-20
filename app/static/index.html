@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-Powered Transaction Processing Pipeline — Real-time monitoring dashboard for transaction ingestion, AI enrichment, and analytics.">
+    <title>AI Transaction Pipeline — Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Ambient background particles -->
+    <div class="ambient-bg" id="ambientBg"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                    </svg>
+                </div>
+                <div>
+                    <h1>Transaction Pipeline</h1>
+                    <span class="header-subtitle">AI-Powered Processing Engine</span>
+                </div>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="health-indicator" id="healthIndicator">
+                <span class="health-dot"></span>
+                <span class="health-text">Checking...</span>
+            </div>
+            <button class="btn btn-icon" id="refreshBtn" title="Refresh data">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="23 4 23 10 17 10"/>
+                    <polyline points="1 20 1 14 7 14"/>
+                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Stats Cards -->
+        <section class="stats-grid" id="statsGrid">
+            <div class="stat-card stat-card--primary" id="statTransactions">
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                        <line x1="1" y1="10" x2="23" y2="10"/>
+                    </svg>
+                </div>
+                <div class="stat-content">
+                    <span class="stat-value" id="totalTransactions">—</span>
+                    <span class="stat-label">Total Transactions</span>
+                </div>
+            </div>
+            <div class="stat-card stat-card--success" id="statEnriched">
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                </div>
+                <div class="stat-content">
+                    <span class="stat-value" id="enrichedCount">—</span>
+                    <span class="stat-label">AI Enriched</span>
+                </div>
+            </div>
+            <div class="stat-card stat-card--warning" id="statAnomalies">
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                </div>
+                <div class="stat-content">
+                    <span class="stat-value" id="anomalyCount">—</span>
+                    <span class="stat-label">Anomalies Detected</span>
+                </div>
+            </div>
+            <div class="stat-card stat-card--info" id="statAmount">
+                <div class="stat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="1" x2="12" y2="23"/>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                </div>
+                <div class="stat-content">
+                    <span class="stat-value" id="totalAmount">—</span>
+                    <span class="stat-label">Total Volume</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upload + Batches -->
+        <section class="grid-2col">
+            <!-- Upload Zone -->
+            <div class="card" id="uploadCard">
+                <div class="card-header">
+                    <h2>Upload Transactions</h2>
+                    <span class="badge badge--info">CSV / JSON</span>
+                </div>
+                <div class="upload-zone" id="uploadZone">
+                    <div class="upload-zone-content">
+                        <div class="upload-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="17 8 12 3 7 8"/>
+                                <line x1="12" y1="3" x2="12" y2="15"/>
+                            </svg>
+                        </div>
+                        <p class="upload-text">Drag & drop your file here</p>
+                        <p class="upload-subtext">or click to browse</p>
+                        <input type="file" id="fileInput" accept=".csv,.json" hidden>
+                    </div>
+                    <!-- Progress overlay -->
+                    <div class="upload-progress" id="uploadProgress" style="display:none">
+                        <div class="upload-progress-bar" id="uploadProgressBar"></div>
+                        <span class="upload-progress-text" id="uploadProgressText">Uploading...</span>
+                    </div>
+                </div>
+                <div class="upload-result" id="uploadResult" style="display:none"></div>
+            </div>
+
+            <!-- Recent Batches -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Processing Batches</h2>
+                    <button class="btn btn-sm btn-ghost" id="refreshBatches">Refresh</button>
+                </div>
+                <div class="batch-list" id="batchList">
+                    <div class="empty-state">
+                        <p>No batches yet. Upload a file to get started.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Breakdown + Transactions -->
+        <section class="grid-2col">
+            <!-- Category Chart -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Category Breakdown</h2>
+                </div>
+                <div class="chart-container" id="categoryChart">
+                    <div class="empty-state">
+                        <p>No category data yet.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anomalies List -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Anomaly Alerts</h2>
+                    <span class="badge badge--warning" id="anomalyBadge">0</span>
+                </div>
+                <div class="anomaly-list" id="anomalyList">
+                    <div class="empty-state">
+                        <p>No anomalies detected.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transactions Table -->
+        <section class="card">
+            <div class="card-header">
+                <h2>Transactions</h2>
+                <div class="table-controls">
+                    <div class="search-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                        <input type="text" id="searchInput" placeholder="Search transactions...">
+                    </div>
+                    <select id="categoryFilter" class="select">
+                        <option value="">All Categories</option>
+                    </select>
+                    <select id="statusFilter" class="select">
+                        <option value="">All Statuses</option>
+                        <option value="pending">Pending</option>
+                        <option value="processing">Processing</option>
+                        <option value="enriched">Enriched</option>
+                        <option value="failed">Failed</option>
+                    </select>
+                </div>
+            </div>
+            <div class="table-wrap">
+                <table class="table" id="transactionsTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Merchant</th>
+                            <th>Amount</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                            <th>Anomaly</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactionsBody">
+                        <tr class="empty-row">
+                            <td colspan="7">No transactions to display.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination" id="pagination"></div>
+        </section>
+    </main>
+
+    <!-- Transaction Detail Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="transactionModal">
+            <div class="modal-header">
+                <h3>Transaction Details</h3>
+                <button class="btn btn-icon modal-close" id="modalClose">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

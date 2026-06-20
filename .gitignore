@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+.env
+transaction_pipeline.db
+uploads/
+.pytest_cache/

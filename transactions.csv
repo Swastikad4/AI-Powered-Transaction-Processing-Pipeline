@@ -1,0 +1,11 @@
+txn_id,date,merchant,amount,currency,status,category,account_id,notes
+101,2023-10-01,Starbucks,$5.50,USD,SUCCESS,Food,A001,Morning coffee
+102,15/10/2023,Amazon,120.00,USD,success,,A001,Book order
+103,10/15/2023,Uber,25.50,usd,PENDING,Transport,A001,
+104,2023/10/16,Swiggy,15.00,USD,SUCCESS,,A001,USD on domestic brand
+105,15-10-2023,Starbucks,6.00,USD,SUCCESS,Food,A001,
+106,2023-10-18,Apple Store,999.00,USD,SUCCESS,,A001,High amount anomaly
+106,2023-10-18,Apple Store,999.00,USD,SUCCESS,,A001,Duplicate row
+107,2023-10-19,Netflix,$15.99,USD,SUCCESS,Entertainment,A002,Monthly
+108,10/20/2023,Ola,25.00,USD,FAILED,,A002,Another domestic USD
+109,2023-10-21,Unknown Shop,45.00,INR,SUCCESS,,A002,
